@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  /* Deep navy surfaces */
-  --space-950: 5 10 24;
-  --space-900: 8 15 33;
-  --space-800: 13 23 48;
-  --space-700: 20 33 66;
-  --space-600: 30 48 88;
-  --line: 40 60 105;
+  /* Midnight surfaces – true blacks & deep charcoals */
+  --space-950: 2 4 8;
+  --space-900: 5 8 14;
+  --space-800: 10 15 22;
+  --space-700: 18 24 34;
+  --space-600: 26 34 48;
+  --line: 32 42 56;
 
-  /* Text */
-  --ink: 232 238 249;
-  --ink-muted: 156 171 199;
-  --ink-faint: 106 122 153;
+  /* Text – cool with a subtle green cast */
+  --ink: 220 238 226;
+  --ink-muted: 138 162 150;
+  --ink-faint: 88 108 100;
 
-  /* Accents */
-  --accent: 34 211 238;
-  --accent-blue: 96 165 250;
+  /* Accents – neon green */
+  --accent: 57 255 20;
+  --accent-blue: 0 230 118;
 
   /* Restrained status colors (always paired with icon + text label) */
-  --status-normal: 52 190 130;
-  --status-attention: 232 176 56;
-  --status-urgent: 239 88 88;
+  --status-normal: 46 204 113;
+  --status-attention: 241 196 15;
+  --status-urgent: 239 72 72;
 
   color-scheme: dark;
 }
@@ -37,8 +37,8 @@
   body {
     @apply bg-space-950 font-sans text-ink antialiased;
     background-image:
-      radial-gradient(1200px 600px at 85% -10%, rgb(var(--accent-blue) / 0.12), transparent 60%),
-      radial-gradient(900px 500px at -10% 110%, rgb(var(--accent) / 0.08), transparent 60%);
+      radial-gradient(1200px 600px at 85% -10%, rgb(var(--accent) / 0.07), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgb(var(--accent-blue) / 0.06), transparent 60%);
     background-attachment: fixed;
   }
   :focus-visible {

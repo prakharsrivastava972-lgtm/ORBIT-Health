@@ -37,7 +37,7 @@ export default {
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
       },
       boxShadow: {
-        panel: '0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 8px 24px -12px rgb(0 0 0 / 0.6)',
+        panel: '0 1px 0 0 rgb(57 255 20 / 0.03) inset, 0 8px 24px -12px rgb(0 0 0 / 0.7)',
       },
       keyframes: {
         'fade-up': {
