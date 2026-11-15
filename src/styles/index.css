@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Deep navy surfaces */
+  --space-950: 5 10 24;
+  --space-900: 8 15 33;
+  --space-800: 13 23 48;
+  --space-700: 20 33 66;
+  --space-600: 30 48 88;
+  --line: 40 60 105;
+
+  /* Text */
+  --ink: 232 238 249;
+  --ink-muted: 156 171 199;
+  --ink-faint: 106 122 153;
+
+  /* Accents */
+  --accent: 34 211 238;
+  --accent-blue: 96 165 250;
+
+  /* Restrained status colors (always paired with icon + text label) */
+  --status-normal: 52 190 130;
+  --status-attention: 232 176 56;
+  --status-urgent: 239 88 88;
+
+  color-scheme: dark;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-space-950 font-sans text-ink antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 85% -10%, rgb(var(--accent-blue) / 0.12), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgb(var(--accent) / 0.08), transparent 60%);
+    background-attachment: fixed;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-line/60 bg-space-800/80 shadow-panel backdrop-blur;
+  }
+  .label-caps {
+    @apply text-[11px] font-medium uppercase tracking-[0.14em] text-ink-faint;
+  }
+}
+
+/* print styles */
+@media print {
+  aside#primary-nav-panel,
+  header.sticky,
+  .no-print {
+    display: none !important;
+  }
+  .lg\:pl-64 {
+    padding-left: 0 !important;
+  }
+  html,
+  body,
+  #root {
+    height: auto !important;
+    background: #fff !important;
+    background-image: none !important;
+    color: #000 !important;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .report-sheet,
+  .report-sheet * {
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-color: #999 !important;
+    backdrop-filter: none !important;
+  }
+  .report-sheet {
+    border: none !important;
+  }
+  .report-sheet section {
+    break-inside: avoid;
+  }
+}
+@page {
+  margin: 14mm;
+}
